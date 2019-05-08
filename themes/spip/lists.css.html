@@ -6,13 +6,10 @@
 	defaut "Vary: Cookie,Accept-Encoding", qui est (un peu)
 	genant en cas de "rotation du cookie de session" apres
 	un changement d'IP (effet de clignotement).
-
-	ATTENTION: il faut absolument le charset sinon Firefox croit que
-	c'est du text/html !
 	<style>
 ]
 #CACHE{3600*100,cache-client}
-#HTTP_HEADER{Content-Type: text/css; charset=iso-8859-15}
+#HTTP_HEADER{Content-Type: text/css; charset=utf-8}
 #HTTP_HEADER{Vary: Accept-Encoding}
 
 /* Listes d'objet */
@@ -71,6 +68,7 @@
 
 .liste-objets .bouton_action_post .submit,.liste-objets .button {font-size:1em;}
 .liste-objets .action a {color:inherit;}
+.liste-objets .liste + .action .button { margin: [(#ENV{line-height}|strdiv{4})em]; }
 
 .liste-objets.auteurs th.statut {line-height:1px;padding-bottom:0;}
 .liste-objets.auteurs td.nom .spip_logos { vertical-align: middle; margin-#ENV{right}: 0.3em; }
